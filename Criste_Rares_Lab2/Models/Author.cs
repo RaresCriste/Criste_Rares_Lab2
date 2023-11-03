@@ -1,4 +1,5 @@
-﻿namespace Criste_Rares_Lab2.Models
+﻿using System.ComponentModel.DataAnnotations;
+namespace Criste_Rares_Lab2.Models
 {
     public class Author
     {
@@ -6,10 +7,11 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public ICollection<Book>? Books { get; set; }
+        [Display(Name = "Full Name")]
         public string FullName { 
             get
-            { 
-                return string.Format("{0} {1}", LastName, FirstName);
+            {
+                return FirstName + " " + LastName;
             }
         }
 
