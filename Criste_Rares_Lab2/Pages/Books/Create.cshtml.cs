@@ -8,9 +8,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Criste_Rares_Lab2.Data;
 using Criste_Rares_Lab2.Models;
 using NuGet.DependencyResolver;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Criste_Rares_Lab2.Pages.Books
 {
+    [Authorize(Roles = "Admin")]
+
     public class CreateModel : BookCategoriesPageModel
     {
         private readonly Criste_Rares_Lab2.Data.Criste_Rares_Lab2Context _context;
